@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+:root{
+    --MAIN-COLOR:#0e1b33;
+    --TEXT-COLOR:#c4dbf1;
+    --ACCENT-COLOR:#111;
+    --MAIN-FONT:"Poppins" , sans-serif;
+    --EXTRA-FONT:"Nunito", verdana;
+    --MAIN-FONT-WEIGHT:400;
+}
+body{
+    min-height: 100vh;
+    background-color: var(--MAIN-COLOR);
+    color: var(--TEXT-COLOR);
+    font-family: var(--MAIN-FONT);
+    font-weight: var(--MAIN-FONT-WEIGHT);
+   
+}
+
+header{
+    background: var(--ACCENT-COLOR);
+    display:flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content:space-between;
+    padding:0.5rem;
+}
+.icon{
+    display: flex;
+    flex-flow:row wrap;
+    
+    align-items: center;
+    justify-content: center;
+    gap: .9em;
+    font-weight: var(--MAIN-FONT-WEIGHT);
+    font-size: 1.5rem;
+  
+}
+
+
+footer{
+  position: absolute;
+  bottom: 0;
+  background-color: var(--ACCENT-COLOR);
+  width:100%;
+  text-align: center;
+  padding:15px;
+  font-weight: 100;
+
+}
+main{ position: relative;
+    height: auto;
+    padding:20px;
+   /*  display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center; */
+    column-count: 2;
+    column-width: 600px;
+    column-fill: balance;
+    background-color: var(--MAIN-COLOR);
+}
+.box1{
+    font-size: 3rem ;
+   
+    height:auto;
+    overflow: hidden;
+    width:auto;
+    width:60%;
+    max-width: 600px;
+    max-height:450px;
+    
+
+}
+.box1 ul li{
+    
+}
+.box1 ul{
+    
+    overflow: hidden;
+    font-weight: 200;
+       
+    animation-name: appear;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-delay: 10s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+  animation-fill-mode: forwards;
+}
+@keyframes appear {
+  0%{
+       max-height:0px;
+    }
+   20%{
+    max-height:60px;
+   }
+   40%{
+    max-height:140px;
+   }
+   60%{
+    max-height:290px;
+   }
+   80%{
+    max-height:300px;
+   }
+   100%{
+    max-height:380px;
+   }
+
+}
+ .box2{
+    max-height: 200px;
+    min-height: 10px;
+   text-align: center;
+    border-bottom: #111 2px solid;
+    width:35%;
+   
+    border-radius: 20px;
+    margin-left: 3px;
+    animation-name: glow;
+    animation-duration: 3s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode:forwards;
+
+}
+  @keyframes glow{
+    0%{
+        border-bottom: blue 2px solid;
+    }
+    50%{
+        border-bottom: white 4px solid;
+    }
+    70%{
+        border-bottom: rgb(0, 255, 136) 2px solid;
+    }
+    90%{
+        border-color: red;
+    }
+    100%{
+        border-color: blue;
+    }
+  }
+button{
+
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    width:100%;
+    height:70px;
+    border-radius: 7rem;
+    max-width: 200px;
+    color: var(--TEXT-COLOR);
+    border:1px groove var(--TEXT-COLOR);
+    font-weight: 200;
+    background: var(--MAIN-COLOR);
+    animation-name:bounce;
+    animation-duration: 2s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+    @keyframes bounce{
+        0% {
+            transform: translateY(1px) ;
+             transform: scaleY(.9);
+        }
+
+        50%{
+           
+            transform: translateY(-5px);
+        }
+        100%{
+            
+        }
+    }
+   
+@media screen and (max-width:576px) {
+    main{
+        flex-flow: column wrap;
+        padding:5px;
+    }
+    .forward{
+       display: none;
+    }
+        
+   button, button::before{
+        content: "Go";
+        font-weight: 100;
+        font-size: 1.5em;
+        animation-name:bounce;
+        animation-duration: 2s;
+        animation-timing-function:linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+    }
+    button{
+        margin-top: 70px;
+    }
+    .box1{
+      font-size: 2rem;
+      margin-top: 80px;
+      width: 90%;
+      height: 250px;
+      
+    }
+    header{
+        flex-flow: column wrap;
+    }
+    .time{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content:space-between ;
+        align-items:center;
+        gap:20px;
+        font-size: 0.8rem;
+        font-weight: 100;
+    } 
+    .icon{
+        width:300px;
+        gap: 3px;
+        justify-content:center;
+        font-size: 1.2rem;
+    }
+    
+    .Boitumelo::after{
+         content: " The Deadly Dev!";
+         flex-wrap: wrap;
+    }
+}
