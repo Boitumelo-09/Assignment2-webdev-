@@ -6,14 +6,15 @@
 }
 :root{
     --MAIN-COLOR:#0e1b33;
-    --TEXT-COLOR:#c4dbf1;
+    --TEXT-COLOR:lch(86.38% 13.68 256.87);
     --ACCENT-COLOR:#111;
     --MAIN-FONT:"Poppins" , sans-serif;
     --EXTRA-FONT:"Nunito", verdana;
     --MAIN-FONT-WEIGHT:400;
 }
 body{
-    min-height: 100vh;
+    overflow: hidden;
+   
     background-color: var(--MAIN-COLOR);
     color: var(--TEXT-COLOR);
     font-family: var(--MAIN-FONT);
@@ -55,18 +56,15 @@ footer{
 main{ position: relative;
     height: auto;
     padding:20px;
-   /*  display: flex;
+    display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: center; */
-    column-count: 2;
-    column-width: 600px;
-    column-fill: balance;
+    align-items: center;
     background-color: var(--MAIN-COLOR);
 }
 .box1{
-    font-size: 3rem ;
-   
+    
+    font-size: clamp(0.2rem,6vh,5rem) ; 
     height:auto;
     overflow: hidden;
     width:auto;
@@ -74,16 +72,18 @@ main{ position: relative;
     max-width: 600px;
     max-height:450px;
     
-
+    position: relative;
+  height: 380px; 
+  
 }
 .box1 ul li{
-    
+    list-style-type: none;
 }
 .box1 ul{
     
     overflow: hidden;
     font-weight: 200;
-       
+    font-size: clamp(0.2rem,4vh,2rem) ;
     animation-name: appear;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -92,6 +92,34 @@ main{ position: relative;
     animation-direction:alternate;
   animation-fill-mode: forwards;
 }
+.in{
+    
+     animation:forward .5s linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode:both;
+    animation-play-state:2;
+    font-size: clamp(12px,4vh,2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #868e9e 0px 0px 3px;
+
+   
+}
+.in i{
+    padding-right: 20px;
+    font-size: clamp(100px,4vh,3rem);
+    
+}
+@keyframes forward {
+        0%,50%{
+padding-left: 30px;
+box-shadow: #c6cbd4 0px 0px 3px;            
+        }
+        100%{
+            padding-left: 15px;
+        }
+    }
 @keyframes appear {
   0%{
        max-height:0px;
@@ -110,6 +138,7 @@ main{ position: relative;
    }
    100%{
     max-height:380px;
+    text-shadow: 0px 0px  5px lemonchiffon;
    }
 
 }
@@ -119,7 +148,6 @@ main{ position: relative;
    text-align: center;
     border-bottom: #111 2px solid;
     width:35%;
-   
     border-radius: 20px;
     margin-left: 3px;
     animation-name: glow;
@@ -131,22 +159,22 @@ main{ position: relative;
 }
   @keyframes glow{
     0%{
-        border-bottom: blue 2px solid;
+        border-bottom: rgb(63, 228, 159) 2px solid;
     }
     50%{
         border-bottom: white 4px solid;
     }
     70%{
-        border-bottom: rgb(0, 255, 136) 2px solid;
+        border-bottom: rgb(34, 230, 138) 2px solid;
     }
     90%{
-        border-color: red;
+        border-color: rgb(10, 129, 103);
     }
     100%{
-        border-color: blue;
+        border-color: rgb(86, 247, 233);
     }
   }
-button{
+.proceed{
 
     text-transform: uppercase;
     font-size: 1.9rem;
@@ -180,6 +208,138 @@ button{
         }
     }
    
+
+
+
+
+
+/*Registration and log in Terminal styles*/
+
+
+#user{
+ 
+    color: var(--TEXT-COLOR);
+    font-size: 900%;
+    animation: rotate 15s ;
+    animation-iteration-count: infinite;
+    border: none;
+     
+     border-radius: 50%;
+     animation-delay: 2s;
+     transition: all 5s;
+}
+@keyframes rotate{
+    0%,100%{
+        transform: rotate(180deg);
+         border-bottom: #f8faff50 3px solid;
+          border-left: #f1f0f05b 4px solid;
+    }
+    50%{box-shadow: #f1f0f05b 0px 0px 5px;
+        transform:rotate(-180deg);
+        border-bottom: #0e1b33de 4px solid;
+        border-left: #0e1b33de 3px solid;
+    }
+}
+.login{
+ position: relative;
+  height:auto;
+  background:radial-gradient(var(--TEXT-COLOR),var(--MAIN-COLOR));
+  min-height:630px;
+  border:2px solid black;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:flex-start;
+}
+
+
+
+.backlinks{
+    text-decoration: none;
+    color:inherit;
+}
+.loginform{
+    position: absolute;
+    text-align: center;
+    height:auto;
+    width:350px;
+    max-width: 80%;
+  background-color: #0e1b33de;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  height:480px;
+  padding: 15px;
+  top: 30px;
+  overflow: hidden;
+}
+#email::placeholder{
+
+    font-size: smaller;
+}
+.submit{
+    padding:10px;
+    font-weight: 10;
+    font-size: 1.5rem;
+    border-radius: 2.2dvb;
+    border: 1px solid whitesmoke;
+    background-color: #0e1b3354;
+    color: var(--TEXT-COLOR);
+     width:120px;
+     transition: all 1s;
+}
+.submit:hover{
+    transform: scale(1.2);
+}
+.fpas{
+    font-weight: 300;
+    color: inherit;
+    
+}
+.account{
+    margin-top: 9px;
+}
+.input{
+    text-align:left;
+    position: relative;
+    padding:16px;
+    padding-left: 0px;
+    font-size: 110%;
+    color: var(--TEXT-COLOR);
+    margin: 15px auto;
+}
+#password{
+   
+    max-width: 166px;
+}
+.rememberme{
+    font-size: 12px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    padding:3px;
+}
+.input input{
+    outline: none;
+    font-size: .9em;
+    background: none;
+    border:none ;
+    border-bottom: var(--ACCENT-COLOR) 1px solid;
+    padding-right: 5px;
+    color: var(--TEXT-COLOR);
+    transition: all 3s;
+}
+.input:hover input{
+    border-bottom: var(--TEXT-COLOR) 1px solid;
+}
+#mail,#lock{
+    position: absolute;
+    left:255px;
+  
+}
 @media screen and (max-width:576px) {
     main{
         flex-flow: column wrap;
@@ -188,8 +348,8 @@ button{
     .forward{
        display: none;
     }
-        
-   button, button::before{
+        .in{display: none;}
+   .proceed, .proceed::before{
         content: "Go";
         font-weight: 100;
         font-size: 1.5em;
@@ -200,7 +360,7 @@ button{
         animation-fill-mode: forwards;
         animation-delay: 1s;
     }
-    button{
+    .proceed{
         margin-top: 70px;
     }
     .box1{
@@ -208,7 +368,6 @@ button{
       margin-top: 80px;
       width: 90%;
       height: 250px;
-      
     }
     header{
         flex-flow: column wrap;
@@ -229,8 +388,23 @@ button{
         font-size: 1.2rem;
     }
     
-    .Boitumelo::after{
+    /* .Boitumelo::after{
          content: " The Deadly Dev!";
          flex-wrap: wrap;
+    } */
+
+    .login{
+        width:100%;
     }
 }
+body::after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
